@@ -5,3 +5,4 @@
     escrever um script para ler o custo de fábrica de um carro, calcular e escrever o
     custo final ao consumidor.
  */
+let custoFabrica = Number(prompt("Qual o custo"))

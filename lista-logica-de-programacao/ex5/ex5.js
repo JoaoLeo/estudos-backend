@@ -1,8 +1,6 @@
 /**
-    6. Uma revendedora de carros usados paga a seus funcionários vendedores um
-    salário fixo por mês, mais uma comissão também fixa para cada carro vendido e
-    mais 5% do valor das vendas por ele efetuadas. Escrever um script que leia o
-    número de carros por ele vendidos, o valor total de suas vendas, o salário fixo e
-    o valor que ele recebe por carro vendido. Calcule e escreva o salário final do
-    vendedor.
+   5. O custo de um carro novo ao consumidor é a soma do custo de fábrica com a
+    porcentagem do distribuidor e dos impostos (aplicados ao custo de fábrica).
+    Escreva um script para ler o custo de fábrica de um carro, a porcentagem do
+    distribuidor e o imposto, e calcular e escrever o custo final ao consumidor
  */
