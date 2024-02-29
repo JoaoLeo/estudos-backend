@@ -11,7 +11,7 @@ let n3 = Number(prompt("digite a nota 3: "));
 let n4 = Number(prompt("digite a nota 4: "));
 
 const media = (n1 + n2 + n3 + n4) / 4;
-if(n1 > 10 || n2 > 10  || n3 > 10  || n4 > 10  ){
+if((n1 > 10) || (n2 > 10) || (n3 > 10) ||( n4 > 10)){
     window.alert("Erro! Uma nota não pode passar de 10");
 }
 else  {
