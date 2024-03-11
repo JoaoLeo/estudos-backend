@@ -59,9 +59,54 @@ router.post("/ex4" ,(req,res)=>{
     let custoF2 = custoFabrica + (custoFabrica * percDistrubuidor) / 100;
     let custoF3 = custoFabrica + (custoFabrica * impostos) / 100;
     let custoFinal = custoFabrica + custoF2 + custoF3;
-    res.status(200).json({salacustoFinalrio});
-    })
+    res.status(200).json({custoFinal});
+})
 
+router.post("/ex5" ,(req,res)=> {
+    const custoFabrica = req.body.fabrica;
+    const percentualDistribuidor = req.body.distribuidor;
+    const impostos = req.body.impostos;
+    const custoDistribuidor = custoFabrica * (percentualDistribuidor / 100);
+    const custoTotal = custoFabrica + custoDistribuidor + impostos;
+    res.status(200).json({custoTotal});
+})
+
+router.post("/ex6" ,(req,res)=> {
+    const numeroCarrosVendidos = req.body.vendidos;
+    const valorTotalVendas = req.body.vendas;
+    const salarioFixo = req.body.salario;
+    const valorPorCarro = req.body.valor
+    const comissaoFixaPorCarro = numeroCarrosVendidos * valorPorCarro;
+    const comissaoPorVendas = valorTotalVendas * 0.05;
+    const salarioFinal = salarioFixo + comissaoFixaPorCarro + comissaoPorVendas;
+    res.status(200).json({salarioFinal});
+})
+
+router.post("/ex7" ,(req,res)=> {
+    const nota1 = req.body.nota1;
+    const nota2 = req.body.nota2;
+    const pesoNota1 = 4;
+    const pesoNota2 = 6;
+    const mediaFinal = (nota1 * pesoNota1 + nota2 * pesoNota2) / (pesoNota1 + pesoNota2);
+    res.status(200).json({mediaFinal});
+})
+
+router.post("/ex8" ,(req,res)=> {
+    const raio = req.body.raio;
+    const altura = req.body.altura;
+    const pi = Math.PI;
+    const volume = pi * Math.pow(raio, 2) * altura;
+    res.status(200).json({volume});
+})
+
+
+router.post("/ex9" ,(req,res)=> {
+    const numero1 = req.body.numero1;
+    const numero2 = req.body.numero2;
+    const soma = numero1 + numero2;
+    const resultado = soma * numero1;
+    res.status(200).json({resultado});
+})
 
 module.exports = router;
 
