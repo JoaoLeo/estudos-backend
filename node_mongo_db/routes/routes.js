@@ -1,6 +1,7 @@
 const express = require("express");
 const produto = require("../models/Produto");
 const router = express.Router();
+const controller = require("../controllers/ProdutoController");
 
 // const introducao = require("./");
 
@@ -8,25 +9,15 @@ router.get("/",(req,res)=>{
     res.send("API rodando");
 })
 
-router.get("/produtos",async (req,res)=>{
-    res.json(await produto.find());
-})
+router.get("/produtos", (req,res) => controller.getAll(req,res));
 
-router.get("/produtos/:id",async (req,res)=>{
-    res.json(await produto.findById(req.params.id));
-})
+router.get("/produtos/:id", (req,res) => controller.getById(req,res));
 
-router.post("/produtos",async (req,res)=>{
-    res.json(await produto.create(req.body));
-})
+router.post("/produtos", (req,res) => controller.insert(req,res));
+ 
+router.delete("/produtos/:id",(req,res) => controller.delete(req,res));
 
-router.delete("/produtos/:id",async (req,res)=>{
-    res.json(await produto.findByIdAndDelete(req.params.id));
-})
-
-router.put("/produtos/:id",async (req,res)=>{
-    res.json(await produto.findByIdAndUpdate(req.params.id,req.body));
-})
+router.put("/produtos/:id",(req,res) => controller.update(req,res));
 
 
 // router.use("/",introducao);
