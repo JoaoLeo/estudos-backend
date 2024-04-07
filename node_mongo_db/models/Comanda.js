@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 
 const schema = mongoose.Schema({
-    nome: String,
+    mesa: String,
+    funcionarioId: Number,
+    clienteId: Number,
+    formaPagamentoId: Number,
+    dataPagamento: Date,
+    data: Date
+
 });
 
 const Comanda = mongoose.model("Comanda", schema);
