@@ -1,0 +1,9 @@
+npm init -y
+
+npm i express mongoose nodemon
+
+npm i node@20.11.1
+
+npm list
+
+npm list node

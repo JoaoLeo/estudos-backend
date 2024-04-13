@@ -10,7 +10,7 @@ const AlunoController = {
         res.json(alunos);
     },
     getAllRecuperacao: async(req,res)=>{
-        const alunos = await model.find({ media: { $gte: 5, $lt: 6.9 } });
+        const alunos = await model.find({ media: { $gte: 5, $lt: 7 } });
         res.json(alunos);
     },
     getAllAprovado: async(req,res)=>{
@@ -19,31 +19,18 @@ const AlunoController = {
     },
     insert: async (req,res) => {
         try {
-            const turma = req.body.turma;
             const notas = req.body.notas;
-            const aluno = {};
+            const aluno = req.body;
             let soma = 0;
             for (const nota of notas) {
-                if(nota < 0 || nota > 10) {
-                    res.status(400).json({msgErro: "Nota inválida"});
-                }
-                    else soma += nota;
+                soma += nota;
             }
-            // notas.forEach(nota => {
-                
-            // });
-            if(turma != "A" &&  turma != "B" && turma != "C" && turma != "D" && turma != "E"){
-                return res.status(400).json({msgErro: "turma inválida"});
-            }
+            
             const media = soma / notas.length;
-            aluno.nome = req.body.nome;
-            aluno.turma = req.body.turma;
-            aluno.notas = req.body.notas;
             aluno.media = media;
             res.json(await model.create(aluno));
        } catch (error) {
-            console.log(error);
-           res.status(400).json(error);
+           res.status(400).json(error.message);
        }
     },
     delete:async (req,res)=>{

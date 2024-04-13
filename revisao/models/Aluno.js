@@ -4,9 +4,14 @@ const schema = mongoose.Schema({
     nome: String,
     turma: {
         type: String,
-        uppercase: true
+        uppercase: true,
+        enum: ["A","B","C","D","E"]
     },
-    notas: [],
+    notas: [{
+        type: Number,
+        min: [0 , "Não pode haver nota menor que 0"], 
+        max: [0 , "Não pode haver nota maior que 10"],
+    }],
     media: Number
 });
 
