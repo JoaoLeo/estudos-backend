@@ -1,3 +1,4 @@
+------ express com mongoose  ------
 npm init -y
 
 npm i express mongoose nodemon
@@ -7,3 +8,15 @@ npm i node@20.11.1
 npm list
 
 npm list node
+
+------ adonis com sql ------
+
+npm init adonisjs@latest restaurante
+
+-- opções de config do projeto
+API
+ACESS TOKEN
+MYSQL
+
+------ comandos uteis ------
+node ace make:controller nome
