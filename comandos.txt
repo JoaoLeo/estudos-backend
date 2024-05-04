@@ -27,6 +27,10 @@ node ace make:model nome
 
 node ace make:model nome -m -c
 
+node ace make:seeder nome
+
+node ace db:seed
+
 node ace migration:run
 
 node ace migration:rollback
