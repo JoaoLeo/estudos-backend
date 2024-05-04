@@ -20,3 +20,15 @@ MYSQL
 
 ------ comandos uteis ------
 node ace make:controller nome
+
+node ace make:migration nome
+
+node ace make:model nome
+
+node ace make:model nome -m -c
+
+node ace migration:run
+
+node ace migration:rollback
+
+node ace migration:refresh
