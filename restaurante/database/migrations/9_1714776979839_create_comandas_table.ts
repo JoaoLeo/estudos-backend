@@ -16,15 +16,11 @@ export default class extends BaseSchema {
       .foreign('funcionario_id')
       .references('id')
       .inTable('funcionarios')
-      table.timestamp('created_at')
-      table.timestamp('updated_at')
 
       table
       .foreign('cliente_id')
       .references('id')
       .inTable('cliente')
-      table.timestamp('created_at')
-      table.timestamp('updated_at')
 
       table
       .foreign('forma_pagamento_id')

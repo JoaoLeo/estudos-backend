@@ -10,10 +10,10 @@ export default class extends BaseSchema {
       table.decimal('preco',5,2).notNullable();
       
       table.string('tamanho', 45).notNullable();
-      table.integer('tipo_produto').unsigned().notNullable();
+      table.integer('tipo_id').unsigned().notNullable();
       
       table
-      .foreign('tipo_produto')
+      .foreign('tipo_id')
       .references('id')
       .inTable('tipos')
       table.timestamp('created_at')
