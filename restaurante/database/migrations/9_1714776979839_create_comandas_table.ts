@@ -10,7 +10,7 @@ export default class extends BaseSchema {
       table.integer('funcionario_id').unsigned().notNullable();
       table.integer('cliente_id').unsigned().notNullable()
       table.integer('forma_pagamento_id').unsigned().notNullable()
-      table.dateTime('dataPagamento')
+      table.dateTime('data_pagamento')
       table.dateTime('data')
       table
       .foreign('funcionario_id')
